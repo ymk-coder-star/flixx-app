@@ -26,7 +26,7 @@ async function search() {
 		showAlert('Please enter a search term');
 		return;
 	}
-	//Fetch data from API and asign respons to variables
+	//Fetch data from API and asign response to variables
 	const { results, total_pages, page, total_results } = await searchDatafromTMDB();
 	global.search.page = page;
 	global.search.totalPages = total_pages;
@@ -82,7 +82,7 @@ function displaySearchResults(results) {
 	} else {
 		document.querySelector('#movie').checked = true;
 	}
-	//Display and interact with pagination
+
 	displayPagination();
 }
 
