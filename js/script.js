@@ -1,6 +1,6 @@
 //Initializing global variables and objects
 const global = {
-	currentPage: window.location.pathname,
+	currentPage: '/' + window.location.pathname.split('/').pop(), // Extract filename from path to work on both local and GitHub Pages
 	search: {
 		term: '',
 		type: '',
@@ -134,6 +134,7 @@ async function fetchDatafromTMDB(endpoint) {
 	const API_KEY = global.api.apiKey;
 	const API_URL = global.api.apiUrl;
 	showSpinner();
+	console.log(`${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`);
 	const response = await fetch(`${API_URL}${endpoint}?api_key=${API_KEY}&language=en-US`);
 	const data = await response.json();
 	hideSpinner();
