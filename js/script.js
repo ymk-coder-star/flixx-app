@@ -1,9 +1,6 @@
 //Initializing global variables and objects
 const global = {
-	currentPage: (() => { // Extract filename from path to work on any hosting (local, GitHub Pages, Netlify)
-		const page = '/' + window.location.pathname.split('/').pop();
-		return page === '/' || page.endsWith('.html') ? page : page + '.html';
-	})(),
+	currentPage: '/' + window.location.pathname.split('/').pop(), // Extract filename from path to work on both local and GitHub Pages
 	search: {
 		term: '',
 		type: '',
