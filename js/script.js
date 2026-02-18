@@ -1,6 +1,6 @@
 //Initializing global variables and objects
 const global = {
-	currentPage: window.location.pathname,
+	currentPage: '/' + window.location.pathname.split('/').pop(), // Extract filename from path to work on both local and GitHub Pages
 	search: {
 		term: '',
 		type: '',
